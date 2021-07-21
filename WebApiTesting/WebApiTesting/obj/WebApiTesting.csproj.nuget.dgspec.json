@@ -1,0 +1,81 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/piyushaggarwal/Projects/WebApiTesting/WebApiTesting/WebApiTesting.csproj": {}
+  },
+  "projects": {
+    "/Users/piyushaggarwal/Projects/WebApiTesting/WebApiTesting/WebApiTesting.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/piyushaggarwal/Projects/WebApiTesting/WebApiTesting/WebApiTesting.csproj",
+        "projectName": "WebApiTesting",
+        "projectPath": "/Users/piyushaggarwal/Projects/WebApiTesting/WebApiTesting/WebApiTesting.csproj",
+        "packagesPath": "/Users/piyushaggarwal/.nuget/packages/",
+        "outputPath": "/Users/piyushaggarwal/Projects/WebApiTesting/WebApiTesting/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/piyushaggarwal/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[3.7.1.15, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Songhay.Net.HttpWebRequest": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "System.Net.Requests": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.302/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

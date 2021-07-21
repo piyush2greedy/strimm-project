@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{DEC12DD3-7659-45DA-96E7-E098DBEB40C2}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WebApiTesting/Controllers/VideosController.cs">
+    <Files>
+      <File FileName="WebApiTesting/Controllers/VideosController.cs" Line="37" Column="1" />
+      <File FileName="WebApiTesting/Program.cs" Line="16" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WebApiTesting" expanded="True">
+            <Node name="WebApiTesting" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="VideosController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.StrimmProject PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
