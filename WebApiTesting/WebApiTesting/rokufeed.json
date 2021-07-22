@@ -1,0 +1,33 @@
+{
+  "providerName": "Strimm Testing",
+  "lastUpdated": "2021-11-11T22:21:37+00:00",
+  "language": "en",
+  "liveFeeds": [
+    {
+      "id": "819281289121",
+      "title": "Strimm Video Test",
+      "shortDescription": "Strimm Video Short Description",
+      "longDescription": "Strimm Video Long Description",
+      "thumbnail": "https://test-bucket-json-map.s3.ap-south-1.amazonaws.com/channel+banner.png",
+      "genres": [
+        "comedy"
+      ],
+      "tags": [
+        "comedy"
+      ],
+      "releaseDate": "2019-10-31",
+      "content": {
+        "dateAdded": "2019-10-31T14:14:54.431Z",
+        "duration": 3600,
+        "videos": [
+          {
+            "url": "https://test-bucket-json-map.s3.ap-south-1.amazonaws.com/merged.m3u8",
+            "quality": "HD",
+            "videoType": "MP4",
+            "bitrate": 1000
+          }
+        ]
+      }
+    }
+  ]
+}

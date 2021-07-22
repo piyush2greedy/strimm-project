@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.IO;
 using System.Net;
 using System.Net.Http;
@@ -22,9 +23,41 @@ namespace WebApiTesting.Controllers
         {
             using (StreamReader r = new StreamReader("merged.json"))
             {
-                string json = r.ReadToEnd();
-                return json;
+                //string json = r.ReadToEnd();
+                //return json;
+                return generateRokuJsonFeed();
             }
+        }
+
+        public dynamic generateRokuJsonFeed()
+        {
+            dynamic rokuFeedJSON = new ExpandoObject();
+            rokuFeedJSON.providerName = "Strimm Testing";
+            rokuFeedJSON.lastUpdated = "2021-11-11T22:21:37+00:00";
+            rokuFeedJSON.language = "en";
+            rokuFeedJSON.liveFeeds = new dynamic[1];
+            rokuFeedJSON.liveFeeds[0] = new ExpandoObject();
+            rokuFeedJSON.liveFeeds[0].id = "819281289121";
+            rokuFeedJSON.liveFeeds[0].title = "Strimm Video Test";
+            rokuFeedJSON.liveFeeds[0].shortDescription = "Strimm Video Short Description";
+            rokuFeedJSON.liveFeeds[0].longDescription = "Strimm Video Long Description";
+            rokuFeedJSON.liveFeeds[0].thumbnail = "https://test-bucket-json-map.s3.ap-south-1.amazonaws.com/channel+banner.png";
+            rokuFeedJSON.liveFeeds[0].genres = new dynamic[1];
+            rokuFeedJSON.liveFeeds[0].genres[0] = "comedy";
+            rokuFeedJSON.liveFeeds[0].tags = new dynamic[1];
+            rokuFeedJSON.liveFeeds[0].tags[0] = "comedy";
+            rokuFeedJSON.liveFeeds[0].releaseDate = "2019-10-31";
+            rokuFeedJSON.liveFeeds[0].content = new ExpandoObject();
+            rokuFeedJSON.liveFeeds[0].content.dateAdded = "2019-10-31T14:14:54.431Z";
+            rokuFeedJSON.liveFeeds[0].content.duration = 3600;
+            rokuFeedJSON.liveFeeds[0].content.videos = new dynamic[1];
+            rokuFeedJSON.liveFeeds[0].content.videos[0] = new ExpandoObject();
+            rokuFeedJSON.liveFeeds[0].content.videos[0].url = "https://test-bucket-json-map.s3.ap-south-1.amazonaws.com/merged.m3u8";
+            rokuFeedJSON.liveFeeds[0].content.videos[0].quality = "HD";
+            rokuFeedJSON.liveFeeds[0].content.videos[0].videoType = "MP4";
+            rokuFeedJSON.liveFeeds[0].content.videos[0].bitrate = 1000;
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(rokuFeedJSON);
+            return json;
         }
 
         static string generatedData = "";
@@ -36,6 +69,9 @@ namespace WebApiTesting.Controllers
             {
 
                 string fileName = @"merged.m3u8";
+                string rokuFeed = @"rokufeed.json";
+
+
                 generatedData = "";
                 generatedData ="#EXTM3U\n#EXT-X-TARGETDURATION:10\n#EXT-X-ALLOW-CACHE:YES\n#EXT-X-PLAYLIST-TYPE:VOD\n#EXT-X-VERSION:3\n#EXT-X-MEDIA-SEQUENCE:1";
                 Console.WriteLine(generatedData);
@@ -65,6 +101,17 @@ namespace WebApiTesting.Controllers
                     using (StreamWriter writer = System.IO.File.CreateText(fileName))
                     {
                         writer.WriteLine(generatedData);
+                    }
+                }
+
+                if (!System.IO.File.Exists(rokuFeed))
+                {
+                    // Create the file and use streamWriter to write text to it.
+                    //If the file existence is not check, this will overwrite said file.
+                    //Use the using block so the file can close and vairable disposed correctly
+                    using (StreamWriter writer = System.IO.File.CreateText(rokuFeed))
+                    {
+                        writer.WriteLine(generateRokuJsonFeed());
                     }
                 }
 
